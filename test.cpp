@@ -3,6 +3,7 @@
 #include "Model/SparseMatri/SparseMatriOpt.h"
 #include "Service/DateInput.h"
 #include "Cfg/Configuration.h"
+#include "Service/PaperReader.h"
 
 using namespace std;
 
@@ -24,5 +25,8 @@ int main()
 	in.open(FILE_PATH,ios::out | ios::app | ios::binary);
 	input.readDate(in);
 	in.close();
+
+	PaperReader pr("/home/lxw/network/Date/e_AMiner-Paper.txt");
+	pr.getNextPaper();
 	return 0;
 }
