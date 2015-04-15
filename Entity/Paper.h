@@ -14,7 +14,7 @@ private:
 	std::vector<std::string> aff;
 	int year;
 	std::string venue;
-	std::vector<int> ref;
+	std::vector<std::string> ref;
 	std::string abstract;
 public:
 	void setIndex(const int i);
@@ -29,7 +29,7 @@ public:
 	std::vector<std::string>& getAff();
 	int getYear();
 	std::string getVenue();
-	std::vector<int>& getRef();
+	std::vector<std::string>& getRef();
 	std::string getAbstract();
 
 };

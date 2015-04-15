@@ -61,7 +61,7 @@ string Paper::getVenue()
 	return Paper::venue;
 }
 
-vector<int>& Paper::getRef()
+vector<string>& Paper::getRef()
 {
 	return Paper::ref;
 }

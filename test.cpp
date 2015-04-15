@@ -4,6 +4,7 @@
 #include "Service/DateInput.h"
 #include "Cfg/Configuration.h"
 #include "Service/PaperReader.h"
+#include "Entity/Paper.h"
 
 using namespace std;
 
@@ -27,6 +28,10 @@ int main()
 	in.close();
 
 	PaperReader pr("/home/lxw/network/Date/e_AMiner-Paper.txt");
-	pr.getNextPaper();
+	Paper p;
+	pr.getNextPaper(p);
+	cout<<"main:"<<endl;
+	cout<<p.getIndex()<<endl;
+	cout<<p.getTitle()<<endl;
 	return 0;
 }
