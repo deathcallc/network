@@ -8,7 +8,7 @@ using namespace std;
 
 AuthorReader::AuthorReader(string p)
 {
-	AuthorReader::fin.open(p.c_str(), ios::out | ios::app | ios::binary);
+	AuthorReader::fin.open(p.c_str(), ios::in | ios::app | ios::binary);
 	AuthorReader::path = p;
 }
 

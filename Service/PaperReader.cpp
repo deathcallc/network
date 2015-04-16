@@ -8,7 +8,7 @@ using namespace std;
 
 PaperReader::PaperReader(string p)
 {
-	PaperReader::fin.open(p.c_str(), ios::out | ios::app | ios::binary);
+	PaperReader::fin.open(p.c_str(), ios::in | ios::app | ios::binary);
 	PaperReader::path = p;
 }
 

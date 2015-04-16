@@ -6,6 +6,7 @@
 #include "Service/PaperReader.h"
 #include "Service/AuthorReader.h"
 #include "Entity/Paper.h"
+#include "Pretreatment.h"
 
 using namespace std;
 
@@ -13,7 +14,7 @@ using namespace std;
 
 int main()
 {
-	SpMatrix sp(NODE_NUM, NODE_NUM);
+/*	SpMatrix sp(NODE_NUM, NODE_NUM);
 	sp.set(10000,10000,100);
 //	cout<<sp.get(10000,10000)<<endl;
 
@@ -27,7 +28,7 @@ int main()
 	in.open(FILE_PATH,ios::out | ios::app | ios::binary);
 	input.readDate(in);
 	in.close();
-/*
+
 	PaperReader pr("/home/lxw/network/Date/e_AMiner-Paper.txt");
 
 	
@@ -38,7 +39,7 @@ int main()
 		cout<<p;
 		cout<<endl;
 	}
-*/
+
 
 	AuthorReader ar("/home/lxw/network/Date/e_AMiner-Author.txt");
 	
@@ -47,7 +48,11 @@ int main()
 	{
 		cout<<p;
 		cout<<endl;
-	}
+	}*/
+	
+	Pretreatment pre;
+	pre.paperDatePretreat(PAPER_FILE_PATH);
+	//pre.paperDatePretreat("/home/lxw/network/Date/e_AMiner-Paper.txt");
 
 	return 0;
 }
