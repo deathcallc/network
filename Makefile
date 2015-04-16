@@ -4,7 +4,8 @@ CFG_PATH = ./Cfg
 ENTITY_PATH = ./Entity
 
 VPATH = $(MODEL_SPARSE_PATH):$(SERVICE_PATH):$(ENTITY_PATH)
-OBJ = test.o SparseMatriOpt.o DateInput.o PaperReader.o Paper.o Author.o
+OBJ = test.o SparseMatriOpt.o DateInput.o PaperReader.o Paper.o Author.o \
+AuthorReader.o
 
 test : $(OBJ)
 	g++ $(OBJ) -o test
@@ -26,6 +27,9 @@ Paper.o : Paper.cpp
 
 Author.o : Author.cpp
 	g++ -c $(ENTITY_PATH)/Author.cpp
+
+AuthorReader.o : AuthorReader.cpp AuthorReader.h AuthorTemplate.h
+	g++ -c $(SERVICE_PATH)/AuthorReader.cpp
 
 .PHONY : clean
 clean :

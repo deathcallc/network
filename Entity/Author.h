@@ -2,6 +2,7 @@
 #define AUTHOR_H
 
 #include <string.h>
+#include <iostream>
 
 class Author
 {
@@ -31,6 +32,9 @@ public:
 	double getPi();
 	void setUpi(const double u);
 	double getUpi();
+
+	void clear();
+	friend std::ostream& operator<<(std::ostream& out, Author& p);
 };
 
 #endif

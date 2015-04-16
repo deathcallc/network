@@ -1,33 +1,33 @@
-#include "PaperReader.h"
-#include "PaperTemplate.h"
+#include "AuthorReader.h"
+#include "AuthorTemplate.h"
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
 
 using namespace std;
 
-PaperReader::PaperReader(string p)
+AuthorReader::AuthorReader(string p)
 {
-	PaperReader::fin.open(p.c_str(), ios::out | ios::app | ios::binary);
-	PaperReader::path = p;
+	AuthorReader::fin.open(p.c_str(), ios::out | ios::app | ios::binary);
+	AuthorReader::path = p;
 }
 
-PaperReader::~PaperReader()
+AuthorReader::~AuthorReader()
 {
-	if(PaperReader::fin.is_open())
+	if(AuthorReader::fin.is_open())
 	{
-		PaperReader::fin.close();
+		AuthorReader::fin.close();
 	}
 }
 
-bool PaperReader::getNextPaper(Paper& p)
+bool AuthorReader::getNextAuthor(Author& p)
 {
 	p.clear();
 	string::size_type pos;
 	string str, strHead, content;
-	while(!PaperReader::fin.eof())
+	while(!AuthorReader::fin.eof())
 	{
-		getline(PaperReader::fin,str);
+		getline(AuthorReader::fin,str);
 		if(0 == str.size())
 		{
 			return true;
@@ -36,37 +36,37 @@ bool PaperReader::getNextPaper(Paper& p)
 		strHead = str.substr(0, pos);
 		content = str.substr(pos+1, -1);
 
-		if(PAPER_INDEX == strHead)
+		if(AUTHOR_INDEX == strHead)
 		{
 			p.setIndex(atoi(content.c_str()));
 		}
-		else if(PAPER_TITLE == strHead)
+		else if(AUTHOR_NAME == strHead)
 		{
-			p.setTitle(content);
+			p.setName(content);
 		}
-		else if(PAPER_AUTHORS == strHead)
+		else if(AUTHOR_AFF == strHead)
 		{
-			PaperReader::split(content, ";", p.getAuthors());
+			p.setAff(content);
 		}
-		else if(PAPER_AFF == strHead)
+		else if(AUTHOR_PC == strHead)
 		{	
-			PaperReader::split(content, ";", p.getAff());
+			p.setPc(atoi(content.c_str()));
 		}
-		else if(PAPER_YEAR == strHead)
+		else if(AUTHOR_CN == strHead)
 		{
-			p.setYear(atoi(content.c_str()));
+			p.setCn(atoi(content.c_str()));
 		}
-		else if(PAPER_VENUE == strHead)
+		else if(AUTHOR_HI == strHead)
 		{
-			p.setVenue(content);
+			p.setHi(atof(content.c_str()));
 		}
-		else if(PAPER_REF ==  strHead)
+		else if(AUTHOR_PI ==  strHead)
 		{
-			p.getRef().push_back(content);
+			p.setPi(atof(content.c_str()));
 		}
-		else if(PAPER_ABS == strHead)
+		else if(AUTHOR_UPI == strHead)
 		{
-			p.setAbstract(content);
+			p.setUpi(atof(content.c_str()));
 		}
 		else
 		{
@@ -77,7 +77,7 @@ bool PaperReader::getNextPaper(Paper& p)
 	return false;
 }
 
-void PaperReader::split(string str, string p, vector<string>& vec)
+void AuthorReader::split(string str, string p, vector<string>& vec)
 {
 	string b, l;
 	string::size_type pos;

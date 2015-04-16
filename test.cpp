@@ -4,6 +4,7 @@
 #include "Service/DateInput.h"
 #include "Cfg/Configuration.h"
 #include "Service/PaperReader.h"
+#include "Service/AuthorReader.h"
 #include "Entity/Paper.h"
 
 using namespace std;
@@ -26,13 +27,23 @@ int main()
 	in.open(FILE_PATH,ios::out | ios::app | ios::binary);
 	input.readDate(in);
 	in.close();
-
+/*
 	PaperReader pr("/home/lxw/network/Date/e_AMiner-Paper.txt");
 
 	
 	Paper p;
 	
 	while(pr.getNextPaper(p))
+	{
+		cout<<p;
+		cout<<endl;
+	}
+*/
+
+	AuthorReader ar("/home/lxw/network/Date/e_AMiner-Author.txt");
+	
+	Author p;
+	while(ar.getNextAuthor(p))
 	{
 		cout<<p;
 		cout<<endl;

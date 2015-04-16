@@ -83,3 +83,27 @@ double Author::getUpi()
 {
 	return Author::upi;
 }
+
+void Author::clear()
+{
+	index = -1;
+	name = "";
+	aff = "";
+	pc = 0;
+	cn = 0;
+	hi = 0;
+	pi = 0;
+	upi = 0;
+}
+
+ostream& operator<<(ostream& out, Author& p)
+{
+	out<<"index : "<<p.index<<endl;	
+	out<<"name : "<<p.name<<endl;
+	out<<"aff : "<<p.aff<<endl;
+	out<<"pc : "<<p.pc<<endl;
+	out<<"cn : "<<p.cn<<endl;
+	out<<"hi : "<<p.hi<<endl;
+	out<<"pi : "<<p.pi<<endl;
+	out<<"upi : "<<p.upi<<endl;
+}
