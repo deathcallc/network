@@ -14,12 +14,12 @@ int main()
 {
 	SpMatrix sp(NODE_NUM, NODE_NUM);
 	sp.set(10000,10000,100);
-	cout<<sp.get(10000,10000)<<endl;
+//	cout<<sp.get(10000,10000)<<endl;
 
 	DateInput input(NODE_NUM, NODE_NUM);
 	if(!access(FILE_PATH,F_OK))
 	{
-		cout<<"abccccc"<<endl;
+//		cout<<"abccccc"<<endl;
 	}
 	
 	ifstream in;
@@ -28,10 +28,15 @@ int main()
 	in.close();
 
 	PaperReader pr("/home/lxw/network/Date/e_AMiner-Paper.txt");
+
+	
 	Paper p;
-	pr.getNextPaper(p);
-	cout<<"main:"<<endl;
-	cout<<p.getIndex()<<endl;
-	cout<<p.getTitle()<<endl;
+	
+	while(pr.getNextPaper(p))
+	{
+		cout<<p;
+		cout<<endl;
+	}
+
 	return 0;
 }

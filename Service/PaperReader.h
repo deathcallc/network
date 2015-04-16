@@ -15,7 +15,7 @@ private:
 public:
 	PaperReader(std::string p);
 	~PaperReader();
-	void getNextPaper(Paper& p);
+	bool getNextPaper(Paper& p);
 
 };
 

@@ -32,6 +32,10 @@ public:
 	std::vector<std::string>& getRef();
 	std::string getAbstract();
 
+	void clear();
+	
+	friend std::ostream& operator<<(std::ostream& out, Paper& p);
+
 };
 
 

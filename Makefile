@@ -29,4 +29,4 @@ Author.o : Author.cpp
 
 .PHONY : clean
 clean :
-	-rm test $(OBJ)
+	-rm test $(OBJ) 2> /dev/null
