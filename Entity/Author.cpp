@@ -89,11 +89,11 @@ void Author::clear()
 	index = -1;
 	name = "";
 	aff = "";
-	pc = 0;
-	cn = 0;
-	hi = 0;
-	pi = 0;
-	upi = 0;
+	pc = -1;
+	cn = -1;
+	hi = -1;
+	pi = -1;
+	upi = -1;
 }
 
 ostream& operator<<(ostream& out, Author& p)
