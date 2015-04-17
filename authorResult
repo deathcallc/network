@@ -1,5 +1,5 @@
-minPc : 1 maxPc : 47
-minCn : 0 maxCn : 67
-minHi : 0 maxHi : 3
-minPi : 0 maxPi : 16.6111
-minUpi : 0 maxUpi : 19.9959
+minPc : 1 maxPc : 752
+minCn : 0 maxCn : 15757
+minHi : 0 maxHi : 60
+minPi : 0.4762 maxPi : 8308.5
+minUpi : 0 maxUpi : 8787.03
