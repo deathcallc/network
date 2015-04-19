@@ -28,6 +28,7 @@ bool PaperReader::getNextPaper(Paper& p)
 	while(!PaperReader::fin.eof())
 	{
 		getline(PaperReader::fin,str);
+
 		if(0 == str.size())
 		{
 			return true;

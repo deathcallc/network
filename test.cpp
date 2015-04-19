@@ -51,10 +51,12 @@ int main()
 	}*/
 	
 	Pretreatment pre;
-//	pre.paperDatePretreat(PAPER_FILE_PATH);
+	pre.paperDatePretreat(PAPER_FILE_PATH);
 //	pre.authorDatePretreat("/home/lxw/network/Date/e_AMiner-Author.txt");
-	pre.authorDatePretreat(AUTHOR_FILE_PATH);
-	//pre.paperDatePretreat("/home/lxw/network/Date/e_AMiner-Paper.txt");
-
+//	pre.authorDatePretreat(AUTHOR_FILE_PATH);
+//	pre.paperDatePretreat("/home/lxw/network/Date/e_AMiner-Paper.txt");
+//	pre.countPaper("/home/lxw/network/Date/e_AMiner-Paper.txt");
+//	pre.countPaper(PAPER_FILE_PATH);
+	
 	return 0;
 }

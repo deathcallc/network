@@ -12,6 +12,31 @@
 
 using namespace std;
 
+void Pretreatment::countPaper(std::string path)
+{
+	int num[100] = {0};
+	PaperReader pr(path);
+
+	Paper p;
+	while(pr.getNextPaper(p))
+	{
+		cout<<p.getIndex()<<endl;
+		if(p.getYear() != 0)
+		{
+			num[p.getYear()-1936]++;
+		}
+	}
+
+	ofstream fout;
+	fout.open("./paperCount", ios::out);
+	
+	for(int i = 0; i < 100; i++)
+	{
+		fout<<i+1936<<" "<<num[i]<<endl;
+	}
+	fout.close();
+}
+
 void Pretreatment::authorDatePretreat(string path)
 {
 	int maxPc = 0,  maxCn = 0;
@@ -78,6 +103,7 @@ void Pretreatment::authorDatePretreat(string path)
 	fout<<"minHi : "<<minHi<<" maxHi : "<<maxHi<<endl;
 	fout<<"minPi : "<<minPi<<" maxPi : "<<maxPi<<endl;
 	fout<<"minUpi : "<<minUpi<<" maxUpi : "<<maxUpi<<endl;
+	fout.close();
 }
 
 void Pretreatment::paperDatePretreat(string path)
@@ -107,7 +133,7 @@ void Pretreatment::paperDatePretreat(string path)
 	}
 
 	ofstream fout;
-	fout.open("./paperResult", ios::out);
+	fout.open("./paperResult_2000", ios::out);
 	fout<<"min : "<<min<<" max : "<<max<<endl;
 
 	set<string>::iterator it;
@@ -116,5 +142,6 @@ void Pretreatment::paperDatePretreat(string path)
 	{
 		fout<<*it<<endl;
 	}
+	fout.close();
 
 }
